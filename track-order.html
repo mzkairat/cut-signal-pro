@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order - Cut Signal Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="checkout-page">
+    <div class="checkout-header">
+        <div class="container">
+            <div class="checkout-header__inner">
+                <a href="index.html" class="checkout-header__logo">Cut Signal Pro</a>
+                <a href="index.html" class="checkout-header__back">← Back to Shop</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="track-order">
+        <div class="container">
+            <div class="track-order__card">
+                <div class="track-order__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <h1 class="track-order__title">Track Your Order</h1>
+                <p class="track-order__text">Enter your order email or tracking number to check the status of your shipment.</p>
+
+                <form class="track-order__form" onsubmit="trackOrder(event)">
+                    <div class="form-group">
+                        <label for="trackingInput">Email or Tracking Number</label>
+                        <input type="text" id="trackingInput" placeholder="Enter your email or tracking number" required>
+                    </div>
+                    <button type="submit" class="track-order__btn">TRACK ORDER</button>
+                </form>
+
+                <div class="track-order__result" id="trackResult" style="display:none;">
+                    <div class="track-order__status">
+                        <div class="track-order__status-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h3>Order Confirmed</h3>
+                        <p>Your order is being processed. You will receive a tracking number via email once your package has shipped.</p>
+                    </div>
+                </div>
+
+                <div class="track-order__help">
+                    <p>Need help with your order?</p>
+                    <a href="mailto:cutsignalpro@gmail.com" class="track-order__help-link">Email us at cutsignalpro@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function trackOrder(e) {
+            e.preventDefault();
+            document.getElementById('trackResult').style.display = 'block';
+            document.getElementById('trackResult').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

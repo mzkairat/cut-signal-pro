@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cut Signal Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        select:focus { outline: none; border-color: var(--blue-600); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        select:disabled { background-color: var(--gray-50); color: var(--gray-400); cursor: not-allowed; }
+    </style>
+</head>
+<body class="checkout-page">
+
+    <!-- Checkout Header -->
+    <div class="checkout-header">
+        <div class="container">
+            <div class="checkout-header__inner">
+                <a href="index.html" class="checkout-header__logo">Cut Signal Pro</a>
+                <div class="checkout-header__secure">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span>Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Content -->
+    <section class="checkout">
+        <div class="container">
+            <div class="checkout__grid">
+                <!-- Left: Form -->
+                <div class="checkout__form-wrapper">
+                    <h2 class="checkout__step-title">Contact Information</h2>
+                    <form id="checkoutForm" class="checkout__form">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <h2 class="checkout__step-title checkout__step-title--mt">Shipping Address</h2>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select your country</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <select id="city" name="city" required disabled>
+                                <option value="">Select your country first</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Street Address *</label>
+                            <input type="text" id="address" name="address" required placeholder="House number and street name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address2">Apartment, suite, etc. (optional)</label>
+                            <input type="text" id="address2" name="address2" placeholder="Apartment, suite, unit, etc.">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State / Province *</label>
+                                <input type="text" id="state" name="state" required placeholder="State or province">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP / Postal Code *</label>
+                                <input type="text" id="zip" name="zip" required placeholder="ZIP code">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Order Notes (optional)</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Special instructions for delivery"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <div class="checkout__summary">
+                    <div class="checkout__summary-card">
+                        <h3 class="checkout__summary-title">Order Summary</h3>
+
+                        <div class="checkout__summary-product">
+                            <img src="images/product-1.jpg" alt="Cut Signal Pro Complete Setup" class="checkout__summary-img">
+                            <div class="checkout__summary-info">
+                                <span class="checkout__summary-name">Cut Signal Pro — Complete Setup</span>
+                                <span class="checkout__summary-desc">Device + Antenna + User Guide</span>
+                            </div>
+                            <span class="checkout__summary-price">$60.00</span>
+                        </div>
+
+                        <div class="checkout__summary-line">
+                            <span>Subtotal</span>
+                            <span>$60.00</span>
+                        </div>
+                        <div class="checkout__summary-line">
+                            <span>Shipping</span>
+                            <span class="checkout__summary-free">FREE</span>
+                        </div>
+                        <div class="checkout__summary-divider"></div>
+                        <div class="checkout__summary-line checkout__summary-total">
+                            <span>Total</span>
+                            <span>$60.00</span>
+                        </div>
+
+                        <button type="submit" form="checkoutForm" class="checkout__submit" onclick="goToPayment(event)">
+                            <span>CONTINUE TO PAYMENT</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+
+                        <div class="checkout__usdt-notice">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <div>
+                                <strong>USDT Payment Only</strong>
+                                <p>Due to product policy restrictions, we accept USDT cryptocurrency payments only. Traditional payment methods (credit card, PayPal) are not available for this product.</p>
+                            </div>
+                        </div>
+
+                        <div class="checkout__guarantee">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>90-Day Money-Back Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const countriesCities = {
+            "Afghanistan": ["Kabul","Herat","Mazar-i-Sharif","Kandahar","Jalalabad"],
+            "Albania": ["Tirana","Durrës","Vlorë","Elbasan","Shkodër"],
+            "Algeria": ["Algiers","Oran","Constantine","Annaba","Blida"],
+            "Andorra": ["Andorra la Vella","Escaldes-Engordany","Encamp","La Massana"],
+            "Angola": ["Luanda","Huambo","Lobito","Benguela","Cabinda"],
+            "Antigua and Barbuda": ["Saint John's","All Saints","Codrington"],
+            "Argentina": ["Buenos Aires","Córdoba","Rosario","Mendoza","Tucumán","La Plata","Mar del Plata"],
+            "Armenia": ["Yerevan","Gyumri","Vanadzor","Vagharshapat"],
+            "Australia": ["Sydney","Melbourne","Brisbane","Perth","Adelaide","Gold Coast","Canberra","Newcastle"],
+            "Austria": ["Vienna","Graz","Linz","Salzburg","Innsbruck","Klagenfurt"],
+            "Azerbaijan": ["Baku","Ganja","Sumqayit","Mingachevir","Lankaran"],
+            "Bahamas": ["Nassau","Freeport","West End"],
+            "Bahrain": ["Manama","Riffa","Muharraq","Hamad Town"],
+            "Bangladesh": ["Dhaka","Chittagong","Khulna","Rajshahi","Sylhet","Comilla"],
+            "Barbados": ["Bridgetown","Speightstown","Oistins"],
+            "Belarus": ["Minsk","Gomel","Mogilev","Vitebsk","Grodno","Brest"],
+            "Belgium": ["Brussels","Antwerp","Ghent","Charleroi","Liège","Bruges"],
+            "Belize": ["Belmopan","Belize City","San Ignacio","Dangriga"],
+            "Benin": ["Porto-Novo","Cotonou","Parakou","Djougou"],
+            "Bhutan": ["Thimphu","Phuntsholing","Paro","Punakha"],
+            "Bolivia": ["La Paz","Santa Cruz","Cochabamba","Sucre","Oruro"],
+            "Bosnia and Herzegovina": ["Sarajevo","Banja Luka","Tuzla","Zenica","Mostar"],
+            "Botswana": ["Gaborone","Francistown","Molepolole","Maun","Kasane"],
+            "Brazil": ["São Paulo","Rio de Janeiro","Brasília","Salvador","Fortaleza","Belo Horizonte","Manaus","Curitiba","Recife","Porto Alegre"],
+            "Brunei": ["Bandar Seri Begawan","Seria","Kuala Belait","Tutong"],
+            "Bulgaria": ["Sofia","Plovdiv","Varna","Burgas","Ruse","Stara Zagora"],
+            "Burkina Faso": ["Ouagadougou","Bobo-Dioulasso","Koudougou","Ouahigouya"],
+            "Burundi": ["Bujumbura","Gitega","Muyinga","Rumonge"],
+            "Cambodia": ["Phnom Penh","Siem Reap","Battambang","Sihanoukville","Kampong Cham"],
+            "Cameroon": ["Yaoundé","Douala","Bamenda","Bafoussam","Garoua","Maroua"],
+            "Canada": ["Toronto","Montreal","Vancouver","Calgary","Edmonton","Ottawa","Winnipeg","Quebec City","Hamilton","Kitchener"],
+            "Cape Verde": ["Praia","Mindelo","Santa Maria","Espargos"],
+            "Central African Republic": ["Bangui","Bimbo","Berberati","Carnot"],
+            "Chad": ["N'Djamena","Moundou","Abéché","Sarh","Kélo"],
+            "Chile": ["Santiago","Valparaíso","Concepción","Viña del Mar","Antofagasta","Temuco"],
+            "China": ["Beijing","Shanghai","Guangzhou","Shenzhen","Chengdu","Hangzhou","Wuhan","Xi'an","Hong Kong","Macau"],
+            "Colombia": ["Bogotá","Medellín","Cali","Barranquilla","Cartagena","Bucaramanga"],
+            "Comoros": ["Moroni","Mutsamudu","Fomboni"],
+            "Congo (DRC)": ["Kinshasa","Lubumbashi","Mbuji-Mayi","Kisangani","Goma"],
+            "Congo (Republic)": ["Brazzaville","Pointe-Noire","Dolisie","Nkayi"],
+            "Costa Rica": ["San José","Alajuela","Cartago","Heredia","Limón","Puntarenas"],
+            "Croatia": ["Zagreb","Split","Rijeka","Osijek","Zadar","Dubrovnik"],
+            "Cuba": ["Havana","Santiago de Cuba","Camagüey","Holguín","Santa Clara"],
+            "Cyprus": ["Nicosia","Limassol","Larnaca","Paphos","Famagusta"],
+            "Czech Republic": ["Prague","Brno","Ostrava","Plzeň","Olomouc","Liberec"],
+            "Denmark": ["Copenhagen","Aarhus","Odense","Aalborg","Esbjerg","Randers"],
+            "Djibouti": ["Djibouti City","Ali Sabieh","Tadjoura","Obock"],
+            "Dominica": ["Roseau","Portsmouth","Marigot"],
+            "Dominican Republic": ["Santo Domingo","Santiago","San Pedro de Macorís","La Romana","Puerto Plata"],
+            "East Timor": ["Dili","Baucau","Maliana","Liquiçá"],
+            "Ecuador": ["Quito","Guayaquil","Cuenca","Santo Domingo","Ambato","Machala"],
+            "Egypt": ["Cairo","Alexandria","Giza","Shubra El Kheima","Port Said","Suez","Luxor","Aswan"],
+            "El Salvador": ["San Salvador","Santa Ana","San Miguel","Mejicanos","Soyapango"],
+            "Equatorial Guinea": ["Malabo","Bata","Ebebiyín","Luba"],
+            "Eritrea": ["Asmara","Keren","Massawa","Mendefera"],
+            "Estonia": ["Tallinn","Tartu","Narva","Pärnu","Kohtla-Järve"],
+            "Eswatini": ["Mbabane","Manzini","Lobamba","Big Bend"],
+            "Ethiopia": ["Addis Ababa","Dire Dawa","Mekelle","Adama","Hawassa","Gondar"],
+            "Fiji": ["Suva","Nadi","Lautoka","Labasa","Savusavu"],
+            "Finland": ["Helsinki","Espoo","Tampere","Vantaa","Oulu","Turku","Jyväskylä"],
+            "France": ["Paris","Marseille","Lyon","Toulouse","Nice","Nantes","Strasbourg","Montpellier","Bordeaux","Lille"],
+            "Gabon": ["Libreville","Port-Gentil","Franceville","Moanda"],
+            "Gambia": ["Banjul","Serekunda","Brikama","Bakau"],
+            "Georgia": ["Tbilisi","Batumi","Kutaisi","Rustavi","Gori"],
+            "Germany": ["Berlin","Hamburg","Munich","Cologne","Frankfurt","Stuttgart","Düsseldorf","Leipzig","Dortmund","Essen"],
+            "Ghana": ["Accra","Kumasi","Tamale","Takoradi","Tema","Cape Coast"],
+            "Greece": ["Athens","Thessaloniki","Patras","Heraklion","Larissa","Volos"],
+            "Grenada": ["St. George's","Gouyave","Sauteurs","Grenville"],
+            "Guatemala": ["Guatemala City","Mixco","Villa Nueva","Quetzaltenango","Escuintla"],
+            "Guinea": ["Conakry","Nzérékoré","Kankan","Kindia","Labé"],
+            "Guinea-Bissau": ["Bissau","Bafatá","Gabú","Bissorã"],
+            "Guyana": ["Georgetown","Linden","New Amsterdam","Anna Regina"],
+            "Haiti": ["Port-au-Prince","Cap-Haïtien","Gonaïves","Les Cayes","Jacmel"],
+            "Honduras": ["Tegucigalpa","San Pedro Sula","Choloma","La Ceiba","El Progreso"],
+            "Hungary": ["Budapest","Debrecen","Szeged","Miskolc","Pécs","Győr"],
+            "Iceland": ["Reykjavik","Kópavogur","Hafnarfjörður","Akureyri","Garðabær"],
+            "India": ["Mumbai","Delhi","Bangalore","Hyderabad","Ahmedabad","Chennai","Kolkata","Pune","Jaipur","Lucknow"],
+            "Indonesia": ["Jakarta","Surabaya","Bandung","Medan","Semarang","Makassar","Palembang","Tangerang","Depok","Bekasi"],
+            "Iran": ["Tehran","Mashhad","Isfahan","Karaj","Shiraz","Tabriz","Ahvaz","Qom"],
+            "Iraq": ["Baghdad","Basra","Erbil","Mosul","Sulaymaniyah","Kirkuk","Najaf"],
+            "Ireland": ["Dublin","Cork","Galway","Limerick","Waterford","Kilkenny"],
+            "Israel": ["Jerusalem","Tel Aviv","Haifa","Rishon LeZion","Petah Tikva","Ashdod","Netanya"],
+            "Italy": ["Rome","Milan","Naples","Turin","Palermo","Genoa","Bologna","Florence","Bari","Catania"],
+            "Ivory Coast": ["Yamoussoukro","Abidjan","Bouaké","Daloa","Korhogo"],
+            "Jamaica": ["Kingston","Montego Bay","Spanish Town","Portmore","Ocho Rios"],
+            "Japan": ["Tokyo","Yokohama","Osaka","Nagoya","Sapporo","Fukuoka","Kobe","Kyoto","Hiroshima","Sendai"],
+            "Jordan": ["Amman","Zarqa","Irbid","Russeifa","Aqaba","Ma'an"],
+            "Kazakhstan": ["Astana","Almaty","Shymkent","Karaganda","Aktobe","Taraz"],
+            "Kenya": ["Nairobi","Mombasa","Kisumu","Nakuru","Eldoret","Thika"],
+            "Kiribati": ["Tarawa","Betio","Bairiki"],
+            "Kosovo": ["Pristina","Prizren","Peja","Mitrovica","Gjilan"],
+            "Kuwait": ["Kuwait City","Al Ahmadi","Hawalli","Al Farwaniyah","Al Jahra"],
+            "Kyrgyzstan": ["Bishkek","Osh","Jalal-Abad","Karakol","Tokmok"],
+            "Laos": ["Vientiane","Luang Prabang","Savannakhet","Pakse","Thakhek"],
+            "Latvia": ["Riga","Daugavpils","Liepāja","Jelgava","Jūrmala"],
+            "Lebanon": ["Beirut","Tripoli","Sidon","Tyre","Zahle","Jounieh"],
+            "Lesotho": ["Maseru","Teyateyaneng","Mafeteng","Hlotse"],
+            "Liberia": ["Monrovia","Gbarnga","Buchanan","Kakata","Harper"],
+            "Libya": ["Tripoli","Benghazi","Misrata","Tarhuna","Al Khums","Sabha"],
+            "Liechtenstein": ["Vaduz","Schaan","Balzers","Triesen","Eschen"],
+            "Lithuania": ["Vilnius","Kaunas","Klaipėda","Šiauliai","Panevėžys"],
+            "Luxembourg": ["Luxembourg City","Esch-sur-Alzette","Differdange","Dudelange","Ettelbruck"],
+            "Madagascar": ["Antananarivo","Toamasina","Antsirabe","Fianarantsoa","Mahajanga"],
+            "Malawi": ["Lilongwe","Blantyre","Mzuzu","Zomba","Mangochi"],
+            "Malaysia": ["Kuala Lumpur","George Town","Johor Bahru","Ipoh","Shah Alam","Petaling Jaya","Kota Kinabalu","Kuching"],
+            "Maldives": ["Malé","Addu City","Fuvahmulah","Thinadhoo"],
+            "Mali": ["Bamako","Sikasso","Mopti","Ségou","Koutiala","Timbuktu"],
+            "Malta": ["Valletta","Birkirkara","Mosta","Qormi","Sliema","Żabbar"],
+            "Marshall Islands": ["Majuro","Kwajalein","Ebeye","Jabor"],
+            "Mauritania": ["Nouakchott","Nouadhibou","Kaédi","Rosso","Atar"],
+            "Mauritius": ["Port Louis","Beau Bassin-Rose Hill","Vacoas-Phoenix","Curepipe","Quatre Bornes"],
+            "Mexico": ["Mexico City","Guadalajara","Monterrey","Puebla","Tijuana","León","Ciudad Juárez","Zapopan","Mérida","San Luis Potosí"],
+            "Micronesia": ["Palikir","Weno","Colonia","Tofol"],
+            "Moldova": ["Chișinău","Tiraspol","Bălți","Bender","Cahul"],
+            "Monaco": ["Monaco","Monte Carlo","La Condamine","Fontvieille"],
+            "Mongolia": ["Ulaanbaatar","Erdenet","Darkhan","Choibalsan","Mörön"],
+            "Montenegro": ["Podgorica","Nikšić","Herceg Novi","Plav","Kotor","Budva"],
+            "Morocco": ["Rabat","Casablanca","Marrakech","Fez","Tangier","Agadir","Meknes","Oujda","Kenitra"],
+            "Mozambique": ["Maputo","Matola","Beira","Nampula","Quelimane","Tete"],
+            "Myanmar": ["Naypyidaw","Yangon","Mandalay","Mawlamyine","Bago","Pathein"],
+            "Namibia": ["Windhoek","Rundu","Walvis Bay","Oshakati","Swakopmund","Grootfontein"],
+            "Nauru": ["Yaren","Denigomodu","Meneng"],
+            "Nepal": ["Kathmandu","Pokhara","Lalitpur","Bharatpur","Biratnagar","Butwal"],
+            "Netherlands": ["Amsterdam","Rotterdam","The Hague","Utrecht","Eindhoven","Tilburg","Groningen","Almere"],
+            "New Zealand": ["Auckland","Wellington","Christchurch","Hamilton","Tauranga","Napier","Dunedin","Palmerston North"],
+            "Nicaragua": ["Managua","León","Masaya","Matagalpa","Chinandega","Granada"],
+            "Niger": ["Niamey","Zinder","Maradi","Agadez","Tahoua"],
+            "Nigeria": ["Lagos","Abuja","Kano","Ibadan","Port Harcourt","Benin City","Kaduna","Enugu","Ilorin","Abeokuta"],
+            "North Korea": ["Pyongyang","Hamhung","Chongjin","Nampo","Wonsan"],
+            "North Macedonia": ["Skopje","Bitola","Kumanovo","Prilep","Tetovo","Ohrid"],
+            "Norway": ["Oslo","Bergen","Trondheim","Stavanger","Drammen","Fredrikstad","Kristiansand","Tromsø"],
+            "Oman": ["Muscat","Salalah","Sohar","Nizwa","Seeb","Sur"],
+            "Pakistan": ["Islamabad","Karachi","Lahore","Faisalabad","Rawalpindi","Multan","Hyderabad","Peshawar","Quetta"],
+            "Palau": ["Ngerulmud","Koror","Melekeok"],
+            "Palestine": ["Ramallah","Gaza City","Hebron","Nablus","Bethlehem","Jenin"],
+            "Panama": ["Panama City","San Miguelito","Colón","David","La Chorrera"],
+            "Papua New Guinea": ["Port Moresby","Lae","Mount Hagen","Madang","Wewak"],
+            "Paraguay": ["Asunción","Ciudad del Este","San Lorenzo","Luque","Capiatá"],
+            "Peru": ["Lima","Arequipa","Trujillo","Chiclayo","Piura","Cusco","Huancayo"],
+            "Philippines": ["Manila","Quezon City","Davao City","Cebu City","Zamboanga City","Taguig","Antipolo","Pasig","Cagayan de Oro"],
+            "Poland": ["Warsaw","Kraków","Łódź","Wrocław","Poznań","Gdańsk","Szczecin","Bydgoszcz","Lublin","Katowice"],
+            "Portugal": ["Lisbon","Porto","Faro","Coimbra","Braga","Funchal","Setúbal"],
+            "Qatar": ["Doha","Al Wakrah","Al Khor","Dukhan","Ras Laffan"],
+            "Romania": ["Bucharest","Cluj-Napoca","Timișoara","Iași","Constanța","Craiova","Brașov","Galați"],
+            "Russia": ["Moscow","Saint Petersburg","Novosibirsk","Yekaterinburg","Kazan","Nizhny Novgorod","Chelyabinsk","Samara","Omsk","Rostov-on-Don"],
+            "Rwanda": ["Kigali","Butare","Gitarama","Gisenyi","Byumba","Cyangugu"],
+            "Saint Kitts and Nevis": ["Basseterre","Charlestown","Dieppe Bay Town"],
+            "Saint Lucia": ["Castries","Vieux Fort","Gros Islet","Soufrière"],
+            "Saint Vincent and the Grenadines": ["Kingstown","Georgetown","Barrouallie"],
+            "Samoa": ["Apia","Vaitele","Faleula","Siusega"],
+            "San Marino": ["San Marino","Serravalle","Borgo Maggiore","Domagnano"],
+            "São Tomé and Príncipe": ["São Tomé","Santo Amaro","Neves"],
+            "Saudi Arabia": ["Riyadh","Jeddah","Mecca","Medina","Dammam","Taif","Buraidah","Khobar"],
+            "Senegal": ["Dakar","Thiès","Rufisque","Saint-Louis","Ziguinchor","Kaolack"],
+            "Serbia": ["Belgrade","Novi Sad","Niš","Kragujevac","Subotica","Zrenjanin"],
+            "Seychelles": ["Victoria","Anse Boileau","Beau Vallon"],
+            "Sierra Leone": ["Freetown","Bo","Kenema","Koidu","Makeni"],
+            "Singapore": ["Singapore"],
+            "Slovakia": ["Bratislava","Košice","Prešov","Žilina","Nitra","Banská Bystrica"],
+            "Slovenia": ["Ljubljana","Maribor","Celje","Kranj","Koper","Novo Mesto"],
+            "Solomon Islands": ["Honiara","Gizo","Auki","Buala"],
+            "Somalia": ["Mogadishu","Hargeisa","Bosaso","Kismayo","Marka"],
+            "South Africa": ["Johannesburg","Cape Town","Durban","Pretoria","Port Elizabeth","Bloemfontein","East London","Polokwane"],
+            "South Korea": ["Seoul","Busan","Incheon","Daegu","Daejeon","Gwangju","Suwon","Ulsan","Changwon"],
+            "South Sudan": ["Juba","Wau","Malakal","Bor","Yei"],
+            "Spain": ["Madrid","Barcelona","Valencia","Seville","Zaragoza","Málaga","Murcia","Palma","Bilbao","Alicante"],
+            "Sri Lanka": ["Colombo","Sri Jayawardenepura Kotte","Kandy","Galle","Jaffna","Negombo","Trincomalee"],
+            "Sudan": ["Khartoum","Omdurman","Khartoum North","Port Sudan","El Obeid","Nyala"],
+            "Suriname": ["Paramaribo","Lelydorp","Nieuw Nickerie","Moengo"],
+            "Sweden": ["Stockholm","Gothenburg","Malmö","Uppsala","Västerås","Örebro","Linköping","Helsingborg"],
+            "Switzerland": ["Zurich","Geneva","Basel","Bern","Lausanne","Winterthur","Lucerne","St. Gallen"],
+            "Syria": ["Damascus","Aleppo","Homs","Latakia","Hama","Deir ez-Zor"],
+            "Taiwan": ["Taipei","Kaohsiung","Taichung","Tainan","Taoyuan","Hsinchu","Keelung"],
+            "Tajikistan": ["Dushanbe","Khujand","Bokhtar","Kulob","Istaravshan"],
+            "Tanzania": ["Dodoma","Dar es Salaam","Mwanza","Arusha","Zanzibar City","Mbeya","Tanga"],
+            "Thailand": ["Bangkok","Chiang Mai","Phuket","Pattaya","Nonthaburi","Chiang Rai","Hat Yai","Khon Kaen"],
+            "Togo": ["Lomé","Sokodé","Kara","Kpalimé","Atakpamé"],
+            "Tonga": ["Nukuʻalofa","Neiafu","Pangai"],
+            "Trinidad and Tobago": ["Port of Spain","San Fernando","Chaguanas","Arima","Point Fortin"],
+            "Tunisia": ["Tunis","Sfax","Sousse","Kairouan","Bizerte","Gabès"],
+            "Turkey": ["Istanbul","Ankara","Izmir","Bursa","Antalya","Adana","Konya","Gaziantep","Mersin","Kayseri"],
+            "Turkmenistan": ["Ashgabat","Türkmenabat","Daşoguz","Mary","Bayramaly"],
+            "Tuvalu": ["Funafuti","Vaiaku","Fongafale"],
+            "Uganda": ["Kampala","Gulu","Lira","Mbarara","Jinja","Mbale","Masaka"],
+            "Ukraine": ["Kyiv","Kharkiv","Odesa","Dnipro","Donetsk","Zaporizhzhia","Lviv","Mykolaiv","Vinnytsia","Kherson"],
+            "United Arab Emirates": ["Dubai","Abu Dhabi","Sharjah","Ajman","Ras Al Khaimah","Fujairah","Umm Al Quwain"],
+            "United Kingdom": ["London","Manchester","Birmingham","Liverpool","Leeds","Glasgow","Edinburgh","Bristol","Sheffield","Cardiff"],
+            "United States": ["New York","Los Angeles","Chicago","Houston","Phoenix","Philadelphia","San Antonio","San Diego","Dallas","San Jose","Austin","Jacksonville","San Francisco","Columbus","Indianapolis","Charlotte","Seattle","Denver","Washington D.C.","Nashville","Oklahoma City","El Paso","Boston","Portland","Las Vegas","Memphis","Louisville","Baltimore","Milwaukee","Albuquerque","Tucson","Fresno","Sacramento","Mesa","Kansas City","Atlanta","Omaha","Colorado Springs","Raleigh","Long Beach","Virginia Beach","Miami","Oakland","Minneapolis","Tulsa","Tampa","Arlington","New Orleans"],
+            "Uruguay": ["Montevideo","Salto","Ciudad de la Costa","Paysandú","Las Piedras","Rivera","Maldonado"],
+            "Uzbekistan": ["Tashkent","Samarkand","Namangan","Andijan","Bukhara","Nukus","Fergana"],
+            "Vanuatu": ["Port Vila","Luganville","Isangel","Saratamata"],
+            "Vatican City": ["Vatican City"],
+            "Venezuela": ["Caracas","Maracaibo","Valencia","Barquisimeto","Ciudad Guayana","Maturín","Barcelona","Puerto Cabello"],
+            "Vietnam": ["Hanoi","Ho Chi Minh City","Da Nang","Hai Phong","Can Tho","Nha Trang","Hue","Da Lat","Vung Tau"],
+            "Yemen": ["Sana'a","Aden","Taiz","Al Hudaydah","Ibb","Dhamar","Amran"],
+            "Zambia": ["Lusaka","Kitwe","Ndola","Kabwe","Livingstone","Mufulira","Luanshya"],
+            "Zimbabwe": ["Harare","Bulawayo","Chitungwiza","Mutare","Gweru","Kwekve","Masvingo"]
+        };
+
+        const countrySelect = document.getElementById('country');
+        const citySelect = document.getElementById('city');
+
+        // Populate countries sorted
+        const sortedCountries = Object.keys(countriesCities).sort();
+        sortedCountries.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            countrySelect.appendChild(opt);
+        });
+
+        // On country change, populate cities
+        countrySelect.addEventListener('change', function() {
+            const selected = this.value;
+            citySelect.innerHTML = '';
+            if (selected && countriesCities[selected]) {
+                citySelect.disabled = false;
+                const defaultOpt = document.createElement('option');
+                defaultOpt.value = '';
+                defaultOpt.textContent = 'Select your city';
+                citySelect.appendChild(defaultOpt);
+                countriesCities[selected].forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city;
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            } else {
+                citySelect.disabled = true;
+                citySelect.innerHTML = '<option value="">Select your country first</option>';
+            }
+        });
+
+        function goToPayment(e) {
+            e.preventDefault();
+            const form = document.getElementById('checkoutForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+            localStorage.setItem('checkoutData', JSON.stringify(data));
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+</html>

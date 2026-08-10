@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Signal Pro - Wireless Environment Control Device</title>
+    <meta name="description" content="Cut Signal Pro - The #1 rated wireless environment control device. Reduce unwanted noise, setup in seconds. 42% OFF - Limited Time Sale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="Cut Signal Pro - Wireless Environment Control Device">
+    <meta property="og:description" content="The #1 rated wireless environment control device. 42% OFF - Limited Time Sale.">
+    <meta property="og:image" content="images/product-1.jpg">
+    <meta property="og:type" content="product">
+</head>
+<body>
+
+    <!-- Urgency Top Bar -->
+    <div class="urgency-bar">
+        <div class="urgency-bar__inner">
+            <span class="urgency-bar__flash">FLASH SALE</span>
+            <span class="urgency-bar__text">42% OFF — Sale Ends In:</span>
+            <div class="countdown" id="countdown">
+                <div class="countdown__block">
+                    <span class="countdown__number" id="hours">03</span>
+                    <span class="countdown__label">HRS</span>
+                </div>
+                <span class="countdown__sep">:</span>
+                <div class="countdown__block">
+                    <span class="countdown__number" id="minutes">00</span>
+                    <span class="countdown__label">MIN</span>
+                </div>
+                <span class="countdown__sep">:</span>
+                <div class="countdown__block">
+                    <span class="countdown__number" id="seconds">00</span>
+                    <span class="countdown__label">SEC</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta__inner">
+            <div class="sticky-cta__price">
+                <span class="sticky-cta__old">$139.99</span>
+                <span class="sticky-cta__current">$60.00</span>
+            </div>
+            <a href="#buy" class="sticky-cta__btn">BUY NOW</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <div class="hero__media">
+                    <div class="hero__badge">-42%</div>
+                    <div class="hero__gallery">
+                        <div class="hero__main-image">
+                            <img src="images/product-1.jpg" alt="Cut Signal Pro" id="mainImage">
+                        </div>
+                        <div class="hero__thumbs">
+                            <button class="hero__thumb active" onclick="changeImage(0)">
+                                <img src="images/product-1.jpg" alt="Product view 1">
+                            </button>
+                            <button class="hero__thumb" onclick="changeImage(1)">
+                                <img src="images/product-2.png" alt="Product view 2">
+                            </button>
+                            <button class="hero__thumb" onclick="changeImage(2)">
+                                <img src="images/product-3.png" alt="Dimensions">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__content">
+                    <div class="hero__rating">
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="hero__rating-text"><strong>4.9/5</strong> by 1,393+ Happy Customers</span>
+                    </div>
+
+                    <h1 class="hero__title">Cut Signal Pro</h1>
+                    <p class="hero__subtitle">Wireless Environment Control Device</p>
+
+                    <div class="hero__benefits">
+                        <div class="hero__benefit">
+                            <span class="hero__benefit-icon">🚀</span>
+                            <span>Reduce unwanted noise</span>
+                        </div>
+                        <div class="hero__benefit">
+                            <span class="hero__benefit-icon">⚡</span>
+                            <span>Setup in seconds</span>
+                        </div>
+                        <div class="hero__benefit">
+                            <span class="hero__benefit-icon">🔌</span>
+                            <span>Just plug it in and start using it</span>
+                        </div>
+                        <div class="hero__benefit">
+                            <span class="hero__benefit-icon">👁️</span>
+                            <span>Take control without anyone noticing</span>
+                        </div>
+                    </div>
+
+                    <!-- Buy Box -->
+                    <div class="buybox" id="buy">
+                        <div class="buybox__price">
+                            <span class="buybox__old-price">$139.99</span>
+                            <span class="buybox__current-price">$60.00</span>
+                            <span class="buybox__save">YOU SAVE $79.99 (57%)</span>
+                        </div>
+
+                        <!-- Complete Setup Only -->
+                        <div class="buybox__product-card">
+                            <div class="buybox__product-header">
+                                <h3 class="buybox__product-title">Complete Setup</h3>
+                                <span class="buybox__product-badge">BEST VALUE</span>
+                            </div>
+                            <p class="buybox__product-sub">Full setup + extended range + user guide</p>
+                            <div class="buybox__bundle-items">
+                                <div class="buybox__bundle-item">
+                                    <img src="images/product-1.jpg" alt="Cut Signal Pro Device">
+                                    <span>Cut Signal Pro Device</span>
+                                </div>
+                                <div class="buybox__bundle-plus">+</div>
+                                <div class="buybox__bundle-item">
+                                    <img src="images/product-2.png" alt="Wide Coverage Antenna">
+                                    <span>Wide Coverage Antenna</span>
+                                </div>
+                                <div class="buybox__bundle-plus">+</div>
+                                <div class="buybox__bundle-item">
+                                    <div class="buybox__bundle-doc">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                    </div>
+                                    <span>User Guide</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buybox__shipping">
+                            <svg class="buybox__shipping-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            <span>Free Insured Shipping Worldwide • 1-5 Working Days</span>
+                        </div>
+
+                        <button class="buybox__cta" onclick="goToCheckout()">
+                            <span class="buybox__cta-text">BUY NOW</span>
+                            <svg class="buybox__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+
+                        <div class="buybox__usdt-notice">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <span>We accept <strong>USDT</strong> only. Due to product policy restrictions, traditional payment methods are not available.</span>
+                        </div>
+
+                        <div class="buybox__guarantee">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>90-Day Money-Back Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof__grid">
+                <div class="social-proof__item">
+                    <span class="social-proof__number">10,000+</span>
+                    <span class="social-proof__label">Units Sold</span>
+                </div>
+                <div class="social-proof__divider"></div>
+                <div class="social-proof__item">
+                    <span class="social-proof__number">4.9/5</span>
+                    <span class="social-proof__label">Customer Rating</span>
+                </div>
+                <div class="social-proof__divider"></div>
+                <div class="social-proof__item">
+                    <span class="social-proof__number">90 Days</span>
+                    <span class="social-proof__label">Money-Back Guarantee</span>
+                </div>
+                <div class="social-proof__divider"></div>
+                <div class="social-proof__item">
+                    <span class="social-proof__number">Free</span>
+                    <span class="social-proof__label">Insured Shipping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poster Image -->
+    <section class="poster-section">
+        <div class="container">
+            <img src="images/poster.jpg" alt="Cut Signal Pro" style="width:100%; border-radius:12px;">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Cut Signal Pro?</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3 class="feature-card__title">Instant Setup</h3>
+                    <p class="feature-card__text">Just plug it in and start using it. No complicated installation or technical knowledge required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="feature-card__title">Safe & Secure</h3>
+                    <p class="feature-card__text">Does not interfere with essential services or affect third parties. Completely safe to use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3 class="feature-card__title">Discreet Operation</h3>
+                    <p class="feature-card__text">Take control without anyone noticing. Compact, portable, and completely silent.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="22" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+                    </div>
+                    <h3 class="feature-card__title">USB-C Powered</h3>
+                    <p class="feature-card__text">No battery needed. Simply connect to any USB-C charger and it's ready in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Thousands / CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-section__inner">
+                <h2 class="cta-section__title">Join Thousands Creating a More Controlled Space</h2>
+                <p class="cta-section__text">Try it risk-free for 90 days. Set it up in minutes and enjoy a more private, focused, distraction-free environment — or get your money back.</p>
+                <div class="cta-section__badges">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>90-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <span>Free Shipping</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Secure Checkout</span>
+                    </div>
+                </div>
+                <a href="#buy" class="cta-section__btn">GET YOURS NOW — 42% OFF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security">
+        <div class="container">
+            <div class="security__inner">
+                <div class="security__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="security__content">
+                    <h3 class="security__title">Security at All Times</h3>
+                    <p class="security__text">This device does not interfere with essential services or affect third parties. Designed with safety and responsibility in mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq__list">
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>How does it work?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>It works subtly to help reduce distractions and improve your focus throughout the day. Includes a practical ideas guide to get the most out of it in different everyday situations.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>Is it easy to use?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Yes, just plug it in and follow the quick setup guide that we will send you after you make your purchase. No technical knowledge required — it's designed to be simple and beginner-friendly.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>What is the range?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>The effective range depends on the distance and how the device is positioned. It performs best in open spaces, where the signal can move more freely. In general, it works within a moderate range.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>Does it require a battery or complicated setup?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>No. Simply connect it to a standard charger (USB-C) and it will be ready in seconds. No installation or complex setup required.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>What is the shipping time?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>We offer free and insured shipping to your address. Delivery time typically ranges from <strong>1-5 working days</strong>. Once your order is processed, you will receive a tracking number so you can check the status of your package at any time.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>How do I track my order?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Once you've placed your order, we'll contact you to send you your tracking number, and you can also check the status of your order at any time in the "Track Your Order" section.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>What if I'm not satisfied?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>We offer a <strong>90-day money-back guarantee</strong>. Try it risk-free — if you're not completely satisfied, simply return it for a full refund. No questions asked.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>Does it work everywhere?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Performance may vary depending on the environment, distance, and aiming. It works best in open spaces where the signal can move freely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="reviews__grid">
+                <div class="review-card">
+                    <div class="review-card__stars">
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="review-card__name">Mark T.</span>
+                    <img src="images/review-img-1.jpg" alt="Review photo" class="review-card__photo">
+                    <p class="review-card__text">"A friend recommended it and I made the right call. Quick setup, noticeable results, and very efficient customer service."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__stars">
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="review-card__name">Sarah L.</span>
+                    <img src="images/review-img-2.jpg" alt="Review photo" class="review-card__photo">
+                    <p class="review-card__text">"Arrived ahead of schedule. Customer service was very friendly. For those wondering how to plug it in — just use any phone charger cable, simple as that."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__stars">
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="review-card__name">James R.</span>
+                    <img src="images/review-img-3.jpg" alt="Review photo" class="review-card__photo">
+                    <p class="review-card__text">"It arrived super fast, earlier than expected, and I can already use it for my personal needs."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__stars">
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="review-card__name">Emily K.</span>
+                    <img src="images/review-img-4.jpg" alt="Review photo" class="review-card__photo">
+                    <p class="review-card__text">"Everything perfect, no issues. Customer support was super helpful. I recommend it for all the different things this device can do."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__stars">
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="review-card__name">David M.</span>
+                    <img src="images/review-img-5.jpg" alt="Review photo" class="review-card__photo">
+                    <p class="review-card__text">"Nothing bad to note, works without any issues. Just use it carefully without affecting anyone."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta__inner">
+                <div class="final-cta__badge">LIMITED TIME OFFER</div>
+                <h2 class="final-cta__title">Don't Miss Out — 42% OFF Ends Soon</h2>
+                <p class="final-cta__text">Join 10,000+ customers who have already transformed their space with Cut Signal Pro.</p>
+                <div class="final-cta__price">
+                    <span class="final-cta__old">$139.99</span>
+                    <span class="final-cta__current">$60.00</span>
+                </div>
+                <a href="#buy" class="final-cta__btn">ORDER NOW — SAVE $79.99</a>
+                <div class="final-cta__trust">
+                    <span>🔒 Secure Checkout</span>
+                    <span>🚚 Free Insured Shipping</span>
+                    <span>💯 90-Day Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <span class="footer__logo">Cut Signal Pro</span>
+                    <p class="footer__tagline">Wireless Environment Control Device</p>
+                </div>
+                <div class="footer__links">
+                    <a href="track-order.html">Track Your Order</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                    <a href="shipping-policy.html">Shipping Policy</a>
+                </div>
+                <div class="footer__payment">
+                    <span class="footer__payment-label">Payment Method:</span>
+                    <div class="footer__payment-icons">
+                        <span class="payment-icon payment-icon--usdt">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                            USDT
+                        </span>
+                    </div>
+                </div>
+                <p class="footer__copyright">&copy; 2026 Cut Signal Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

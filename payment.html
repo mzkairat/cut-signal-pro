@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - Cut Signal Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="payment-page">
+
+    <div class="payment-wrapper">
+        <div class="payment-container">
+
+            <!-- Title -->
+            <h1 class="pay-title">Complete Payment</h1>
+            <p class="pay-subtitle">Step 2 of 2 — Send the exact amount in USDT to the address below.</p>
+
+            <!-- Order ID -->
+            <div class="pay-order-id">
+                <span class="pay-order-id__label">Order ID:</span>
+                <span class="pay-order-id__value" id="orderId">76ZPMTJX3MH2</span>
+            </div>
+
+            <!-- Paying For -->
+            <div class="pay-for">
+                <div class="pay-for__left">
+                    <span class="pay-for__label">Paying For</span>
+                    <span class="pay-for__product">Cut Signal Pro (Complete Setup)</span>
+                </div>
+                <div class="pay-for__right">
+                    <span class="pay-for__amount">60 USDT</span>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="pay-timer">
+                <div class="pay-timer__icon">⏳</div>
+                <span class="pay-timer__label">Time remaining to complete payment</span>
+                <div class="pay-timer__time" id="payCountdown">29:43</div>
+            </div>
+
+            <!-- Network Badge -->
+            <div class="pay-network">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>TRC-20 Network (Tron) — USDT only</span>
+            </div>
+
+            <!-- Wallet Address with QR -->
+            <div class="pay-wallet">
+                <label class="pay-wallet__label">Wallet Address</label>
+                <div class="pay-wallet__box">
+                    <code class="pay-wallet__address" id="walletAddress">TLGKLmdZTgXRivF41X4DJiLGWA8Rrf7v49</code>
+                    <button class="pay-wallet__copy" onclick="copyWallet()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span id="copyText">Copy</span>
+                    </button>
+                </div>
+                <div class="pay-qr">
+                    <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TLGKLmdZTgXRivF41X4DJiLGWA8Rrf7v49&bgcolor=ffffff&color=000000" alt="USDT QR Code" width="200" height="200">
+                </div>
+            </div>
+
+            <!-- USDT Only Notice -->
+            <div class="pay-usdt-notice">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="pay-usdt-notice__text">
+                    <strong>Why USDT only?</strong> Due to the specialized nature of this product, traditional payment providers do not support processing for this item. We accept USDT (TRC-20) to ensure secure and uninterrupted service.
+                </div>
+            </div>
+
+            <!-- Awaiting Status -->
+            <div class="pay-status">
+                <div class="pay-status__dot"></div>
+                <div class="pay-status__content">
+                    <strong>Awaiting Payment...</strong>
+                    <span>We check automatically every 30 seconds</span>
+                </div>
+            </div>
+
+            <!-- Important Warning -->
+            <div class="pay-warning">
+                <div class="pay-warning__icon">⚠️</div>
+                <div class="pay-warning__content">
+                    <strong>Important:</strong> Send <strong>60 USDT</strong> to the address above using the <strong>TRC-20 (Tron)</strong> network only. Do NOT use BEP-20, ERC-20 or any other network. Sending on the wrong network will result in permanent loss of funds.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const walletAddr = 'TLGKLmdZTgXRivF41X4DJiLGWA8Rrf7v49';
+
+        // Countdown Timer (30 minutes)
+        let totalSeconds = 30 * 60;
+        const countdownEl = document.getElementById('payCountdown');
+
+        function updatePayCountdown() {
+            if (totalSeconds <= 0) return;
+            totalSeconds--;
+            const m = Math.floor(totalSeconds / 60);
+            const s = totalSeconds % 60;
+            countdownEl.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }
+        setInterval(updatePayCountdown, 1000);
+
+        // Generate random Order ID
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let orderId = '';
+        for (let i = 0; i < 12; i++) orderId += chars[Math.floor(Math.random() * chars.length)];
+        document.getElementById('orderId').textContent = orderId;
+
+        // Copy wallet
+        function copyWallet() {
+            navigator.clipboard.writeText(walletAddr).then(() => {
+                const btn = document.getElementById('copyText');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2500);
+            });
+        }
+    </script>
+</body>
+</html>

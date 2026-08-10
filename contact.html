@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cut Signal Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="policy-page">
+
+    <!-- Header -->
+    <header class="policy-header">
+        <div class="container">
+            <a href="index.html" class="policy-header__logo">Cut Signal Pro</a>
+            <a href="index.html" class="policy-header__back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Shop
+            </a>
+        </div>
+    </header>
+
+    <main class="policy__content">
+        <div class="container">
+            <h1 class="policy__title">Contact Us</h1>
+
+            <div class="policy__section">
+                <h2>Get in Touch</h2>
+                <p>Have a question about your order, need help with setup, or just want to reach out? We're here to help.</p>
+            </div>
+
+            <div class="policy__section">
+                <h2>Email</h2>
+                <p>The best way to reach us is by email. We respond to all inquiries within <strong>24 hours</strong>.</p>
+                <div class="contact-email-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <div>
+                        <span class="contact-email-card__label">Email Address</span>
+                        <a href="mailto:cutsignalpro@gmail.com" class="contact-email-card__email">cutsignalpro@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy__section">
+                <h2>What We Can Help With</h2>
+                <ul>
+                    <li>Order status and tracking information</li>
+                    <li>Setup assistance and technical support</li>
+                    <li>Return and refund requests</li>
+                    <li>Product questions</li>
+                    <li>Shipping inquiries</li>
+                </ul>
+            </div>
+
+            <div class="policy__section">
+                <h2>Response Time</h2>
+                <p>We aim to respond to all emails within <strong>24 hours</strong> during business days. Please include your order ID (if applicable) so we can assist you faster.</p>
+            </div>
+
+            <div class="policy__section">
+                <h2>Before You Contact Us</h2>
+                <p>You may find a quick answer in our pages:</p>
+                <ul>
+                    <li><a href="track-order.html">Track Your Order</a> — Check your shipment status</li>
+                    <li><a href="shipping-policy.html">Shipping Policy</a> — Delivery times and details</li>
+                    <li><a href="refund-policy.html">Refund Policy</a> — Returns and money-back guarantee</li>
+                    <li><a href="terms-of-service.html">Terms of Service</a> — Our policies</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <span class="footer__logo">Cut Signal Pro</span>
+                    <p class="footer__tagline">Wireless Environment Control Device</p>
+                </div>
+                <div class="footer__links">
+                    <a href="track-order.html">Track Your Order</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                    <a href="shipping-policy.html">Shipping Policy</a>
+                </div>
+                <div class="footer__payment">
+                    <span class="footer__payment-label">Payment Method:</span>
+                    <div class="footer__payment-icons">
+                        <span class="payment-icon payment-icon--usdt">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                            USDT
+                        </span>
+                    </div>
+                </div>
+                <p class="footer__copyright">&copy; 2026 Cut Signal Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .contact-email-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-top: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .contact-email-card:hover {
+            border-color: var(--blue-600);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-email-card svg { color: var(--blue-600); flex-shrink: 0; }
+        .contact-email-card__label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+        .contact-email-card__email { font-size: 1.05rem; font-weight: 700; color: var(--blue-600); text-decoration: none; }
+        .contact-email-card__email:hover { text-decoration: underline; }
+    </style>
+</body>
+</html>
