@@ -41,7 +41,7 @@ function initCountdown() {
 // --- Image Gallery ---
 const images = [
     'images/product-1.jpg',
-    'images/product-2.png',
+    'images/product-2.jpg',
     'images/product-3.png'
 ];
 
