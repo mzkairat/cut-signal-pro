@@ -371,6 +371,28 @@ a { text-decoration: none; color: inherit; }
 .buybox__cta:hover { background: var(--blue-700); }
 .buybox__cta-icon { width: 20px; height: 20px; }
 
+.buybox__telegram {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #0088cc;
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: inherit;
+}
+.buybox__telegram:hover { background: #006da3; }
+.buybox__telegram svg { flex-shrink: 0; }
+
 .buybox__usdt-notice {
     display: flex;
     align-items: flex-start;
